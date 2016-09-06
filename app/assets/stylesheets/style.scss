@@ -1,0 +1,45 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html,body{
+	margin: 0px;
+	font-family: 'Indie Flower', cursive;
+}
+
+//listas
+.no-list{
+	list-style:none;
+	text-decoration: none;
+}
+a,a:visited{
+	color: inherit !important;
+	text-decoration:none;
+}
+
+//magenes
+.no-margin{
+	margin: 0px;
+}
+
+//padding
+.large-padding{
+	padding: 7px 5px;
+}
+
+//fondos
+.be-black{
+	background-color: #140E1C;
+}
+
+//fuentes y color de letras
+.white{
+	color: #FFF;
+}
+
+.small{
+	font-size: 1.3em;
+}
+
+.medium{
+	font-size: 1.8em;	
+}
