@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_filter :authenticate_user!, only: [:create, :destroy, :edit, :new]
+	before_action :authenticate_user!, except: [:show, :index]
 
 	#get -> /articles
 	def index
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 	#get -> /articles/:id
 	def show
 		@article = Article.find(params[:id])
+		@article.update_visits_count
 	end
 
 	#get -> /articles/new
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
 
 	#post -> /articles
 	def create
-		@article = Article.new(article_params)
+		@article = current_user.articles.new(article_params)
 		if @article.save
 			redirect_to @article
 		else
