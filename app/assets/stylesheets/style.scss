@@ -6,16 +6,6 @@ html,body{
 	font-family: 'Indie Flower', cursive;
 }
 
-//listas
-.no-list{
-	list-style:none;
-	text-decoration: none;
-}
-a,a:visited{
-	color: inherit !important;
-	text-decoration:none;
-}
-
 //magenes
 .no-margin{
 	margin: 0px;
@@ -49,4 +39,14 @@ a,a:visited{
 	width: 80%;
 	//para centrar
 	margin: 0 auto;
+}
+
+//listas
+.no-list{
+	list-style:none;
+}
+
+a,a:visited{
+	color: inherit !important;
+	text-decoration:none;
 }
