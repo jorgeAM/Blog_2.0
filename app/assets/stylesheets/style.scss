@@ -41,10 +41,21 @@ html,body{
 	margin: 0 auto;
 }
 
-//listas
+.container-devise{
+	width: 40%;
+	//para centrar
+	margin: 0 auto;
+}
+
+//listas y links
 .no-list{
 	list-style:none;
 }
+
+a:link   
+{   
+ text-decoration:none;   
+}   
 
 a,a:visited{
 	color: inherit !important;

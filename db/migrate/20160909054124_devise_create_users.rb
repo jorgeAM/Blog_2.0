@@ -30,6 +30,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      #datos adicionales qeu quiero agregarle a mi modelo
+      t.string :name
+      t.string :permission_level
+
 
       t.timestamps null: false
     end

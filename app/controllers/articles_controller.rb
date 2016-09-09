@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+	before_filter :authenticate_user!, only: [:create, :destroy, :edit, :new]
+
 	#get -> /articles
 	def index
 		#si no tuviera "@" la variable no podemos llamarla

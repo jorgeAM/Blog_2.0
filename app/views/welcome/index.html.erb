@@ -1,1 +1,8 @@
-<h1>Bienvenidos a nuestro blog!!</h1>
+<h1>
+	Bienvenidos
+	<% if user_signed_in? %>
+		<%= current_user.email %>
+	<% else %>
+		Desconocido
+	<% end %>
+</h1>
