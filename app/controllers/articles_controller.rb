@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 		@article.update_visits_count
+		#se creare un nuevo comentario
+		@comment = Comment.new
 	end
 
 	#get -> /articles/new

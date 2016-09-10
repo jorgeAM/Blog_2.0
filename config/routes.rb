@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
   devise_for :users
-  resources :articles
+
+  #las rutas de commets depende del article
+  resources :articles do
+  	resources :comments, only: [:create, :destroy, :update]
+  end
   
   root 'welcome#index'
 end

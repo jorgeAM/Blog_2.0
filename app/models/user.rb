@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   #relación con modelo ARTICLE
   has_many :articles
+  #relacion con modelo COMMENT
+  has_many :comments
 end
