@@ -9,6 +9,8 @@ class Article < ActiveRecord::Base
 
 	#referencia a modelo USER
 	belongs_to :user
+	#referencia como modelo COMMENTS
+	has_many :comments
 
 	def update_visits_count
 		self.update(visits_count: self.visits_count + 1)
