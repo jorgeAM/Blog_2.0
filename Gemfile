@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.1.0'
 #gema para authenticación
 gem 'devise', '4.2.0'
 #gema para manejo de imagenes
-gem 'paperclip', '5.0.0'
+gem 'paperclip'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

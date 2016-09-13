@@ -12,6 +12,10 @@ class Article < ActiveRecord::Base
 	#referencia como modelo COMMENTS
 	has_many :comments
 
+	#validacion para poder usar paperclip
+	has_attached_file :cover, styles: { medium: "1280x720>", thumb: "800x600>" }, default_url: "/images/:style/missing.png"
+	validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
+
 	def update_visits_count
 		self.update(visits_count: self.visits_count + 1)
 	end

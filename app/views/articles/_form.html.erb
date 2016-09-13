@@ -9,6 +9,10 @@
 	</div>
 
 	<div class="form-group">
+		<%= f.file_field :cover, as: :file%>
+	</div>
+
+	<div class="form-group">
 		<%=f.text_area :body, placeholder:"Escribe aqui el articulo", style:"height:200px;", class:"form-control" %>
 	</div>
 
