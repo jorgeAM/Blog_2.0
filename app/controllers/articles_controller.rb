@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 	def new
 		#creamos pero no se guarda en la DB
 		@article = Article.new
+		@categories = Category.all
 	end
 
 	def edit
@@ -56,7 +57,7 @@ class ArticlesController < ApplicationController
 
 	private
 	def article_params
-		params.require(:article).permit(:title, :body, :cover)
+		params.require(:article).permit(:title, :body, :cover, :categories)
 	end
 
 end
