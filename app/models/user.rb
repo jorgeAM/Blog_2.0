@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   has_many :articles
   #relacion con modelo COMMENT
   has_many :comments
+
+  #incluimos modulo del concerns
+  include PermissionsConcern
 end
