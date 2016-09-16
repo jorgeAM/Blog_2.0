@@ -1,4 +1,25 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id                 :integer          not null, primary key
+#  title              :string
+#  body               :text
+#  visits_count       :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :integer
+#  cover_file_name    :string
+#  cover_content_type :string
+#  cover_file_size    :integer
+#  cover_updated_at   :datetime
+#  state              :string
+#
+
 class Article < ActiveRecord::Base
+	#incluimos modulo de aasm
+	include AASM
+	
 	#validacion de presencia
 	validates_presence_of :title, :body
 	validates :title, uniqueness: true
@@ -21,6 +42,29 @@ class Article < ActiveRecord::Base
 
 	#despues de crear el article
 	after_create :save_categories
+
+	#maquina de estado
+	aasm column: 'state' do
+		state :in_draft, initial: true
+		state :published
+
+		event :publish do
+			transitions from: :in_draft, to: :published
+		end
+
+		event :unpublish do
+			transitions from: :published, to: :in_draft
+		end
+	end
+
+	#scope en este caso podemos usar los metodos que brinda la gema por defecto
+	#scope metodo 1
+	scope :publicados, ->{where(state: 'published')}
+	scope :ultimos, ->{order('created_at DESC').limit(1)}
+	#scope meotodo 2
+	def self.publicados
+		Article.where(state: 'published')
+	end
 
 	#custom setter (metodo set)
 	def categories=(categories)

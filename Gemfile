@@ -21,6 +21,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '4.2.0'
 #gema para manejo de imagenes
 gem 'paperclip'
+#gema para maquina de estados
+gem 'aasm', '4.11'
+#gema para decir campos en modelo
+gem 'annotate'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
 	def index
 		#si no tuviera "@" la variable no podemos llamarla
 		#en la vista
-		@articles = Article.all
+		#@articles = Article.all
+		@articles = Article.publicados
 	end
 
 	#get -> /articles/:id
