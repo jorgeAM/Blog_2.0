@@ -8,7 +8,7 @@
 		<%=link_to "Eliminar", article, method: :delete, class:"btn btn-danger" %>
 		<% if article.may_publish?%>
 			-
-			<%=link_to "Publicar", article, method: :delete, class:"btn btn-success" %>
+			<%=link_to "Publicar", publish_article_path(article.id), method: :put, class:"btn btn-success" %>
 		<% end %>
 	</div>
 <% end %>

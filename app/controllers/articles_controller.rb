@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :authenticate_user!, except: [:show, :index]
 	before_action :authenticate_editor!, only: [:new, :create, :update]
-	before_action :authenticate_admin!, only: [:destroy]
+	before_action :authenticate_admin!, only: [:destroy, :publish]
 
 	#get -> /articles
 	def index
@@ -57,6 +57,12 @@ class ArticlesController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def publish
+		@article = Article.find(params[:id])
+		@article.publish!
+		redirect_to @article
 	end
 
 	private

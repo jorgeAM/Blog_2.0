@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   
   devise_for :users
   root 'welcome#index'
-
+  #ruta para el dashboard
   get '/dashboard', to: 'welcome#dashboard'
+  #put se usa para modificar ruta existente
+  put '/articles/:id/publish',as: :publish_article, to: 'articles#publish'
+  #get '/articles/:id/publish', as: :publish_article, to: 'articles#publish'
 end

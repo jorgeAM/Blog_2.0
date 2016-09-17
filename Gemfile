@@ -25,6 +25,8 @@ gem 'paperclip'
 gem 'aasm', '4.11'
 #gema para decir campos en modelo
 gem 'annotate'
+#gema para paginacion
+gem 'will_paginate', '3.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
