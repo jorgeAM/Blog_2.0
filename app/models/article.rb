@@ -17,6 +17,8 @@
 #
 
 class Article < ActiveRecord::Base
+	self.per_page = 5
+
 	#incluimos modulo de aasm
 	include AASM
 	

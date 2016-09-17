@@ -6,3 +6,7 @@
 		<%= article.body%>
 	</div>
 <% end %>
+
+<div class="apple_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>

@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 		#si no tuviera "@" la variable no podemos llamarla
 		#en la vista
 		#@articles = Article.all
-		@articles = Article.publicados
+		@articles = Article.paginate(page: params[:page]).publicados
 	end
 
 	#get -> /articles/:id
