@@ -18,14 +18,7 @@
 </div>
 
 <div>
-	<%= @article.body %>
-</div>
-
-<div>
-	<h4>Categoria: </h4>
-	<% @article.categories.each do |category| %>
-		<%= category.name%>
-	<% end %>
+	<%= @article.body.html_safe %>
 </div>
 
 <div>

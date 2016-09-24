@@ -27,6 +27,8 @@ gem 'aasm', '4.11'
 gem 'annotate'
 #gema para paginacion
 gem 'will_paginate', '3.1.0'
+#gema para markup
+gem 'epic-editor-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

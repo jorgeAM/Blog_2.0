@@ -1,4 +1,4 @@
-<%= form_for(@article) do |f| %>
+<%= form_for(@article, html: {id:"formulario"}) do |f| %>
 	<% @article.errors.full_messages.each do |message| %>
 		<div>
 			* <%= message %>
@@ -13,7 +13,8 @@
 	</div>
 
 	<div class="form-group">
-		<%=f.text_area :body, placeholder:"Escribe aqui el articulo", style:"height:200px;", class:"form-control" %>
+		<%= f.hidden_field :body, id:"body" %>
+		<div id="epiceditor" style="height:250px;"></div>
 	</div>
 
 	<div class="form-group">
@@ -29,3 +30,17 @@
 		<%=f.submit "Guardar", class:"btn btn-success" %>			
 	</div>
 <% end %>
+
+<script>
+	var editor = new EpicEditor({
+		file:{
+			name: "nuevo"
+		}
+	});
+
+	editor.load();
+
+	$('#formulario').on('submit', function(){
+		$('#body').val(editor.exportFile("nuevo", "html"));
+	});
+</script>
