@@ -29,6 +29,8 @@ gem 'annotate'
 gem 'will_paginate', '3.1.0'
 #gema para markup
 gem 'epic-editor-rails'
+#gema para que no coloquen codigo js malicioso
+gem 'sanitize', '4.3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

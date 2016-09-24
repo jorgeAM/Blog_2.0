@@ -14,6 +14,7 @@
 
 	<div class="form-group">
 		<%= f.hidden_field :body, id:"body" %>
+		<%= f.hidden_field :markup_body, id:"markup-body" %>
 		<div id="epiceditor" style="height:250px;"></div>
 	</div>
 
@@ -33,6 +34,7 @@
 
 <script>
 	var editor = new EpicEditor({
+		textarea: "markup-body", 
 		file:{
 			name: "nuevo"
 		}
@@ -42,5 +44,6 @@
 
 	$('#formulario').on('submit', function(){
 		$('#body').val(editor.exportFile("nuevo", "html"));
+		$('#markup-body').val(editor.exportFile("nuevo"));
 	});
 </script>
