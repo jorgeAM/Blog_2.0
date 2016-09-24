@@ -6,6 +6,19 @@ html,body{
 	font-family: 'Indie Flower', cursive;
 }
 
+//posiciones
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.text-center{
+	text-align: center;
+}
+
 //magenes
 .no-margin{
 	margin: 0px;
@@ -35,6 +48,15 @@ html,body{
 }
 
 //helpers
+.background-cover{
+	background-position: center;
+	background-size: cover;
+}
+
+.article-height{
+	height: 150px;
+}
+
 .container-new{
 	width: 80%;
 	//para centrar

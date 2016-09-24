@@ -1,11 +1,9 @@
-<% @articles.each do |article| %>
-	<h1>
-		<%=link_to article.title, article%>
-	</h1>
-	<div>
-		<%= article.body%>
-	</div>
-<% end %>
+<div class="container-new">
+	<h1>Artículos</h1>
+	<div class="row">
+		<%= render @articles %>
+	</div>	
+</div>
 
 <div class="apple_pagination">
     <%= will_paginate @articles, :container => false %>
