@@ -44,6 +44,7 @@ class Article < ActiveRecord::Base
 
 	#despues de crear el article
 	after_create :save_categories
+	after_create :send_mail
 
 	#maquina de estado
 	aasm column: 'state' do
@@ -85,6 +86,10 @@ class Article < ActiveRecord::Base
 				HasCategory.create(category_id: category_id, article_id: self.id)			
 			end
 		end
+	end
+
+	def send_mail
+		ArticleMailer.new_article(self).deliver_later
 	end
 
 	def set_visits_count
