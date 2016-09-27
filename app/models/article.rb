@@ -39,7 +39,7 @@ class Article < ActiveRecord::Base
 	has_many :categories, through: :has_categories
 
 	#validacion para poder usar paperclip
-	has_attached_file :cover, styles: { medium: "1280x720>", thumb: "800x600>" }
+	has_attached_file :cover, styles: { medium: "1280x720>", thumb: "800x600>" }, default_url: "/images/:style/missing.png"
 	validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 
 	#despues de crear el article
